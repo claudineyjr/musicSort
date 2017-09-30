@@ -12,5 +12,3 @@ var connMySql = function() {
 module.exports = function(){
     return connMySql;
 }
-
-
