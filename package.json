@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/claudineyjr/musicSort#readme",
   "dependencies": {
-    "express": "^4.16.1"
+    "express": "^4.16.1",
+    "nodemon": "^1.12.1"
   }
 }
