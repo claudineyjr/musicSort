@@ -30,6 +30,18 @@
             </ul>
         </div>
       </nav>
-      
+      <% if(genero.length === 0) { %>
+        <h3 class="cadastro-title">Sortear!</h3>
+        <form class="form-horizontal" action="/fazersorteio" method="POST">
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-danger"> SORTEAR </button>
+            </div>
+          </div>
+        </form>
+      <% } %>
+      <% if(error.msg) { %>
+        <h3 class="cadastro-title"><%= error.msg %></h3>
+      <% } %>
   </body>
 </html>

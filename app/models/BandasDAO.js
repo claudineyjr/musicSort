@@ -3,12 +3,14 @@ function BandasDAO(connection){
 }
 
 BandasDAO.prototype.getBandas = function(callback){
-	this._connection.query('SELECT * FROM bandas ORDER BY genero ASC', callback);
+	this._connection.query('SELECT * FROM bandas ORDER BY nome ASC', callback);
 }
 
-BandasDAO.prototype.getBandasByLetra = function(gender, initialLetter, callback){
-    this._connection.query('SELECT * FROM bandas WHERE gender = "'
-        + gender + '" AND nome LIKE "' + initialLetter + '%"', callback);
+BandasDAO.prototype.getBandasByLetra = function(generos, gender, initialLetter, callback){
+    console.log('SELECT * FROM bandas WHERE genero = "'
+    + gender + '" AND nome LIKE "' + initialLetter + '%" ORDER BY nome');
+    this._connection.query('SELECT * FROM bandas WHERE genero = "'
+        + gender + '" AND nome LIKE "' + initialLetter + '%" ORDER BY nome', callback);
 }
 
 BandasDAO.prototype.cadastrarBanda = function(banda, callback){
