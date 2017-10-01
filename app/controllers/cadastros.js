@@ -11,10 +11,10 @@ module.exports.cadastrarBanda = function(application, req, res){
     var banda = req.body;
 
     var connection = application.config.dbConnection();
-    var generosModel = new application.app.models.GenerosDAO(connection);
+    var bandasModel = new application.app.models.BandasDAO(connection);
 
-    generosModel.cadastrarBanda(banda, function(error, result){
-        res.redirect('/');
+    bandasModel.cadastrarBanda(banda, function(error, result){
+        res.redirect('/cadastros');
     });
 
 };

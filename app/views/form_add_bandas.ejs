@@ -14,6 +14,7 @@
 
     <!-- Material icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>S2M Music</title>
   </head>
   <body>
       <nav class="navbar navbar-inverse">
@@ -22,13 +23,14 @@
               <a class="navbar-brand" href="#">S2M Music <i class="material-icons navbar-icon">music_note</i></a>
             </div>
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Sortear</a></li>
-              <li><a href="/cadastros">Cadastrar</a></li>
-              <li><a href="#">Histórico</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/sortear">Sortear</a></li>
+              <li class="active"><a href="/cadastros">Cadastrar</a></li>
+              <li><a href="/historico">Histórico</a></li>
             </ul>
         </div>
       </nav>
+      <h3 class="cadastro-title">Cadastrar Banda</h3>
       <form class="form-horizontal" action="/cadastrarbanda" method="POST">
           <div class="form-group">
             <label class="control-label col-sm-2" for="banda">Banda:</label>
@@ -50,7 +52,7 @@
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Cadastrar Banda</button>
+              <button type="submit" class="btn btn-primary">Cadastrar Banda</button>
             </div>
           </div>
         </form><br /><br />
