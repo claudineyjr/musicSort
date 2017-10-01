@@ -6,4 +6,8 @@ module.exports = function(application) {
     application.post('/cadastrarbanda', function(req, res){
         application.app.controllers.cadastros.cadastrarBanda(application, req, res);
     });
+
+    application.post('/cadastrargenero', function(req, res){
+        application.app.controllers.cadastros.cadastrarGenero(application, req, res);
+    });
 }
