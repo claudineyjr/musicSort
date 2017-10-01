@@ -24,22 +24,22 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#">Sortear</a></li>
-              <li><a href="#">Cadastrar</a></li>
+              <li><a href="/cadastros">Cadastrar</a></li>
               <li><a href="#">Histórico</a></li>
             </ul>
         </div>
       </nav>
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="/cadastrarbanda" method="POST">
           <div class="form-group">
             <label class="control-label col-sm-2" for="banda">Banda:</label>
             <div class="col-sm-6">
-              <input type="text" class="form-control" id="banda" placeholder="Nome da banda">
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da banda">
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="band-gender">Gênero:</label>
+            <label class="control-label col-sm-2" for="genero">Gênero:</label>
             <div class="col-sm-6">
-              <select name="band-gender">
+              <select id="genero" name="genero">
                 <% for(var i = 0; i < generos.length; i++) {%>
                   <option value="<%=generos[i].id%>"><%=generos[i].genero%></option>
                 <% } %>

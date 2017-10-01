@@ -2,10 +2,11 @@ var mysql = require('mysql');
 
 var connMySql = function() {
     return mysql.createConnection({
-        host: 's2mmusic.mysql.dbaas.com.br',
-        user: 's2mmusic',
-        password: 'banana01@',
-        database: 's2mmusic'
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 's2mmusic',
+        port: 3310
     });
 }
 
