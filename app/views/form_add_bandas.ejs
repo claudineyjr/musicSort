@@ -27,7 +27,32 @@
               <li><a href="#">Cadastrar</a></li>
               <li><a href="#">Histórico</a></li>
             </ul>
-          </div>
+        </div>
       </nav>
+      <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="banda">Banda:</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="banda" placeholder="Nome da banda">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="band-gender">Gênero:</label>
+            <div class="col-sm-6">
+              <select name="band-gender">
+                <% for(var i = 0; i < generos.length; i++) {%>
+                  <option value="<%=generos[i].id%>"><%=generos[i].genero%></option>
+                <% } %>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
   </body>
 </html>
