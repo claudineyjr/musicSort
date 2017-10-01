@@ -14,6 +14,9 @@ module.exports.cadastrarBanda = function(application, req, res){
     var bandasModel = new application.app.models.BandasDAO(connection);
 
     bandasModel.cadastrarBanda(banda, function(error, result){
+        if(error){
+            console.log(error);
+        }
         res.redirect('/cadastros');
     });
 

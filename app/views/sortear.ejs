@@ -43,5 +43,13 @@
       <% if(error.msg) { %>
         <h3 class="cadastro-title"><%= error.msg %></h3>
       <% } %>
+      <% if(success.msg) { %>
+        <h3 class="cadastro-title"><%= success.msg %></h3>
+        <ul class="list-group col-sm-6 col-sm-offset-1">
+          <% for(var i = 0; i < bandas.length; i++) { %>
+            <li class="list-group-item active"><%=bandas[i].nome%></li>
+          <% } %>
+        </ul>  
+      <% } %>
   </body>
 </html>

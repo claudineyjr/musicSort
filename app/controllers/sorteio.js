@@ -10,20 +10,22 @@ module.exports.sorteio = function (application, req, res) {
     console.log(randomGender);
     var letraInicial = getRandomLetter();
     bandasModel.getBandasByLetra(generos, generos[randomGender].id, letraInicial, function (error, resultado) {
-      let mensagemErro = '';
+      let mensagem = '';
       if (resultado.length == 0) {
-        mensagemErro = 'Não existem bandas de ' + generos[randomGender].genero
+        mensagem = 'Não existem bandas de ' + generos[randomGender].genero
           + ' com a letra ' + letraInicial;
         res.render('sortear', { 
-          error: {msg: mensagemErro},
-          success: {},
+          error: {msg: mensagem},
+          success: [],
           genero: generos[randomGender].genero,
           bandas: resultado
         });
       } else {
+        mensagem = 'Exibindo bandas de ' + generos[randomGender].genero
+        + ' com a letra ' + letraInicial;
         res.render('sortear', { 
-          error: mensagemErro,
-          success: {},
+          error: [],
+          success: {msg: mensagem},
           genero: generos[randomGender].genero,
           bandas: resultado
         });
