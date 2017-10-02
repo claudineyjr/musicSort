@@ -30,9 +30,9 @@ module.exports.cadastrarGenero = function(application, req, res){
 
     generosModel.cadastrarGenero(genero, function(error, result){
         if(error){
-            res.redirect('/', {error: {msg: 'Erro na inserção'}, success: {}}); 
+            console.log(error);
         } else {
-            res.redirect('/', {error: {}, success: {msg: 'Inserido com sucesso!'}});
+            res.redirect('/cadastros');
         }
     });
 
