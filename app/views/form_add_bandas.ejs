@@ -30,9 +30,19 @@
             </ul>
         </div>
       </nav>
+      <% if(validacao.length > 0) { %>
+        <div class="alert alert-danger">
+          <strong>Atenção!</strong>
+          <ul>
+            <% for(var i = 0; i < validacao.length; i++) { %>
+              <li><%=validacao[i].msg%></li>
+            <% } %>
+          </ul>
+        </div>
+      <% } %>
       <h3 class="cadastro-title">Cadastrar Banda</h3>
       <form class="form-horizontal" action="/cadastrarbanda" method="POST">
-          <div class="form-group">
+        <div class="form-group">
             <label class="control-label col-sm-2" for="banda">Banda:</label>
             <div class="col-sm-6">
               <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da banda">
