@@ -7,6 +7,14 @@ module.exports.cadastros = function(application, req, res){
 	});	
 };
 
+module.exports.banco = function(application, req, res){
+	var connection = application.config.dbConnection();
+	connection.query('CREATE DATABASE IF NOT EXISTS `s2mmusic` CHARACTER SET latin1 COLLATE latin1_swedish_ci');
+	connection.query('USE `s2mmusic`');
+	connection.query('CREATE TABLE `bandas` ( `id` Int( 11 ) AUTO_INCREMENT NOT NULL, `nome` VarChar( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, `genero` Int( 11 ) NOT NULL, PRIMARY KEY ( `id` ) ) CHARACTER SET = utf8 COLLATE = utf8_general_ci ENGINE = InnoDB AUTO_INCREMENT = 25');
+	connection.query('CREATE TABLE `genders` (  `id` Int( 11 ) AUTO_INCREMENT NOT NULL, `genero` VarChar( 100 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL, PRIMARY KEY ( `id` ) ) CHARACTER SET = utf8 COLLATE = utf8_general_ci ENGINE = InnoDB AUTO_INCREMENT = 21');
+};
+
 module.exports.cadastrarBanda = function(application, req, res){
     var banda = req.body;
 
