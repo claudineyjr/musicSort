@@ -6,6 +6,7 @@ var port = (process.env.VCAP_APP_PORT || 3000);
 if (process.env.VCAP_SERVICES) {
     var services = JSON.parse(process.env.VCAP_SERVICES);
     var mysql_creds = services['mysql'][0]['credentials'];
+}
 
 var connMySql = function() {
     return mysql.createConnection({
