@@ -1,11 +1,10 @@
 module.exports.cadastros = function(application, req, res){
 	var connection = application.config.dbConnection();
     var generosModel = new application.app.models.GenerosDAO(connection);
-    console.log(connection);
 
 	generosModel.getGeneros(function(error, result){
 		res.render("form_add_bandas", {generos : result, validacao: []});
-	});	
+	});
 };
 
 

@@ -26,10 +26,29 @@
               <li><a href="/">Home</a></li>
               <li><a href="/sortear">Sortear</a></li>
               <li><a href="/cadastros">Cadastrar</a></li>
-              <li class="active"><a href="/historico">Histórico</a></li>
+              <li class="active"><a href="/listagem">Listagem</a></li>
             </ul>
         </div>
       </nav>
-      
+      <% if(bandas.length > 0) { %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Banda</th>
+              <th>Estilo</th>
+              <th>Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i = 0; i < bandas.length; i++){ %>
+              <tr>
+                <td><%=bandas[i].nome%></td>
+                <td><%=bandas[i].genero%></td>
+                <td><a href="/deletar?<%=bandas[i].id%>"><i class="material-icons" style="color:red">delete_forever</i></a></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      <% } %>
   </body>
 </html>

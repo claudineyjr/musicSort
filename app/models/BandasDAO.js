@@ -17,6 +17,10 @@ BandasDAO.prototype.cadastrarBanda = function(banda, callback){
     this._connection.query('insert into bandas set ? ', banda, callback)
 }
 
+BandasDAO.prototype.getListagem = function(callback){
+    this._connection.query('SELECT bandas.id, bandas.nome, genders.genero FROM bandas INNER JOIN genders ON bandas.genero = genders.id ORDER BY bandas.nome ASC', callback);
+}
+
 module.exports = function(){
 	return BandasDAO;
 }
