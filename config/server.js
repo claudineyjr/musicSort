@@ -6,10 +6,6 @@ var bodyParser = require('body-parser');
 
 var expressValidator = require('express-validator');
 
-const cfenv = require('cfenv');
-
-var appEnv = cfenv.getAppEnv();
-
 var app = express();
 
 app.set('view engine', 'ejs');

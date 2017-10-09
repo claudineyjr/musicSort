@@ -1,0 +1,7 @@
+---
+applications:
+- name:    s2mmusic
+  host:    s2mmusic
+  memory:  256M
+  services:
+    - mysql-ly
