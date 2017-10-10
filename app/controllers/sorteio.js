@@ -1,14 +1,14 @@
 module.exports.sorteio = function (application, req, res) {
-  var connection = application.config.dbConnection();
-  var generosModel = new application.app.models.GenerosDAO(connection);
-  var bandasModel = new application.app.models.BandasDAO(connection);
-  var generos;
+  let connection = application.config.dbConnection();
+  let generosModel = new application.app.models.GenerosDAO(connection);
+  let bandasModel = new application.app.models.BandasDAO(connection);
+  let generos;
 
   generosModel.getGeneros(function (error, result, generos) {
     generos = result;
     let randomGender = getRandomGender(0, generos.length - 1);
     console.log(randomGender);
-    var letraInicial = getRandomLetter();
+    let letraInicial = getRandomLetter();
     bandasModel.getBandasByLetra(generos, generos[randomGender].id, letraInicial, function (error, resultado) {
       let mensagem = '';
       if (resultado.length == 0) {
